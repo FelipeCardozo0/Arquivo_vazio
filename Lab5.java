@@ -15,7 +15,7 @@ public class test {
     }
 
     public static String countCharacters(String s){
-        String result = "";
+        StringBuilder result =new StringBuilder();
         for (int i =0;i <s.length();i++){
             char currentChar=s.charAt(i);
             int count=0;
@@ -30,6 +30,6 @@ public class test {
 
             }
         }
-        return result;
+        return result.toString();
     }
 }
