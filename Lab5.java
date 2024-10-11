@@ -26,7 +26,7 @@ public class test {
                 }
             }
             if (s.indexOf(currentChar) == i){
-                System.out.println(currentChar + ": " + count);
+                result.append(currentChar).append(": ").append(count).append("\n");
 
             }
         }
