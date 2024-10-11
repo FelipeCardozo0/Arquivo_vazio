@@ -1,4 +1,4 @@
-public class Lab5 {
+public class test {
     public static void main(String[] args) {
         System.out.println(countCharacters("O botafogo Vai ser campeao da libertadores"));
 
@@ -15,20 +15,21 @@ public class Lab5 {
     }
 
     public static String countCharacters(String s){
-        StringBuilder result =new StringBuilder();
+        String result = "";
         for (int i =0;i <s.length();i++){
             char currentChar=s.charAt(i);
             int count=0;
 
             for (int j =0; j < s.length(); j++){
                 if (s.charAt(j) ==currentChar){
-                    count++; }
+                    count++;
+                }
             }
-
-            
             if (s.indexOf(currentChar) == i){
-                result.append(currentChar).append(": ").append(count).append("\n");
+                System.out.println(currentChar + ": " + count);
+
             }
         }
-        return result.toString();
-    }}
+        return result;
+    }
+}
