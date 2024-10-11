@@ -1,37 +1,34 @@
-// Java program for the above approach
-class Lab5 {
-    static void countCharacters(String str)
-    {
-        int count[] = new int[256];
-        for (int i = 0; i < str.length(); i++){
-            count[str.charAt(i)]++;
-        }
-
-        char ch[] = new char[str.length()];
-        for (int i = 0; i < str.length(); i++){
-            ch[i] = str.charAt(i);
-            int find = 0;
-            for (int j = 0; j <= i; j++) {
-
-                if (str.charAt(i) == ch[j]){
-                    find++;
-                }
-            }
-
-            if (find == 1) {
-                System.out.println(str.charAt(i) + ":" + count[str.charAt(i)]);
-            }
-        }
-    }
-
+public class Lab5 {
     public static void main(String[] args) {
+        System.out.println(countCharacters("O botafogo Vai ser campeao da libertadores"));
+
         String mississippi = "mississippi";
         String str = "!\"#$%&'()*+,-./0123456789:;ABCDEabcde ";
         String str2 = "!\"#$%&'()*+,-./0123456789:;ABCDEabcde !\"#$%&'()*+,-./0123456789:;ABCDEabcde !\"#$%&'()*+,-./0123456789:;ABCDEabcde ";
-        countCharacters(mississippi);
+
         System.out.println();
-        countCharacters(str);
+        System.out.println(countCharacters(mississippi));
         System.out.println();
-        countCharacters(str2);
+        System.out.println(countCharacters(str));
+        System.out.println();
+        System.out.println(countCharacters(str2));
     }
-}
+
+    public static String countCharacters(String s){
+        StringBuilder result =new StringBuilder();
+        for (int i =0;i <s.length();i++){
+            char currentChar=s.charAt(i);
+            int count=0;
+
+            for (int j =0; j < s.length(); j++){
+                if (s.charAt(j) ==currentChar){
+                    count++; }
+            }
+
+            
+            if (s.indexOf(currentChar) == i){
+                result.append(currentChar).append(": ").append(count).append("\n");
+            }
+        }
+        return result.toString();
+    }}
